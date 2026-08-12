@@ -10,9 +10,14 @@ export default function Home() {
   });
 
   const [onlySurvived, setOnlySurvived] = useState(false);
+  const [nSel, setNSel] = useState(1);
 
   const handleClick = () => {
     setOnlySurvived(!onlySurvived);
+  };
+  const handleSeleccion = (sel) => {
+    if (sel) setNSel(nSel + 1);
+    else setNSel(nSel - 1);
   };
 
   return (
@@ -22,11 +27,17 @@ export default function Home() {
       <div>
         <button onClick={handleClick}>ver sólo los sobrevivientes</button>
       </div>
+      <div>Seleccionados: {nSel}</div>
       <div>
         {titanic.map(
           (e, i) =>
             (!onlySurvived || e.Survived == 1) && (
-              <Pasajero key={i} indice={i} pData={e} />
+              <Pasajero
+                key={i}
+                indice={i}
+                pData={e}
+                handleSeleccion={handleSeleccion}
+              />
             ),
         )}
       </div>
