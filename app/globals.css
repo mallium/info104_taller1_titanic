@@ -1,0 +1,27 @@
+body{
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+div {
+  padding: 4px 4px 4px 4px;
+}
+.pasajero{
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #CCCCCC;
+  height: 50px;
+}
+.pasajero-v{
+  font-size: 2em;
+  flex: 1;
+  text-align: center;
+}
+.pasajero-n{
+  flex: 16;
+}
+.pasajero-s{
+  flex: 3;
+}
+.fila-par{
+  background-color: #F0F0F0;
+}
