@@ -1,5 +1,5 @@
 import titanic from "./data/titanic.json";
-
+import Pasajero from "./components/pasajero";
 export default function Home() {
   let nSurvived = 0;
   titanic.map((e) => {
@@ -12,11 +12,7 @@ export default function Home() {
       <div>Sobrevivieron {nSurvived}</div>
       <div>
         {titanic.map((e, i) => (
-          <div className={"pasajero " + (i % 2 == 0 ? "fila-par" : "")} key={i}>
-            <div className="pasajero-v">{e.Survived == 0 ? "✝" : " "}</div>
-            <div className="pasajero-n">{e.Name}</div>
-            <div className="pasajero-s">{e.Sex}</div>
-          </div>
+          <Pasajero key={i} indice={i} pData={e} />
         ))}
       </div>
     </div>
